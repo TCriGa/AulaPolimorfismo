@@ -27,10 +27,11 @@ open class Conta(
     }
 
     open fun depositoCS() {
-        println("Por gentileza, informe quem está realizando o deposito")
+        println("Por gentileza, informe quem está realizando o deposito: " +
+                "(Digite Sim para Empregador e Não para outras pessoas)")
         pessoa = readln()
 
-        if (pessoa == "Empregador") {
+        if (pessoa == "Sim") {
             informarValorDeposito()
         } else println("Conta Salário só pode receber depósito do empregador")
 
