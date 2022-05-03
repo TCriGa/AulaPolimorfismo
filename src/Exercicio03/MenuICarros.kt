@@ -4,29 +4,31 @@ import kotlin.system.exitProcess
 
 class MenuICarros : ICarros() {
 
-    val renault: Renault = Renault()
-    val fiat: Fiat = Fiat()
-    val hyndai: Hyundai = Hyundai()
+    private val renault: Renault = Renault()
+    private val fiat: Fiat = Fiat()
+    private val hyndai: Hyundai = Hyundai()
 
     init {
         println("|-------------------Bem vindo ao sistema Icarros------------------------------------------|")
     }
 
-    fun boasvindas(){
+   private fun boasvindas() {
 
-        println("|------------------01 - Inserir marca do Veiculo------------------------------------------|")
-        println("|------------------02 - Inserir dados do automóvel ---------------------------------------|")
-        println("|------------------03 - Mostrar dados cadastrados ----------------------------------------|")
-        println("|------------------04 - Sair--------------------------------------------------------------|")
+
+        println("|----------------------Informe a opção desejada ------------------------------------------|")
+        println("|------------------01 - Inserir dados do automóvel ---------------------------------------|")
+        println("|------------------02 - Mostrar dados cadastrados ----------------------------------------|")
+        println("|------------------03 - Sair--------------------------------------------------------------|")
     }
 
-    fun menuu() {
 
+   fun menuu() {
+        marcaAutomovel()
         do {
             boasvindas()
             when (readln().toInt()) {
-                1-> marcaAutomovel()
-                2 -> {
+
+                1 -> {
                     when (marca) {
                         "Renault" -> {
                             renault.dadosAutomovel()
@@ -34,10 +36,10 @@ class MenuICarros : ICarros() {
                         "Fiat" -> {
                             fiat.dadosAutomovel()
                         }
-                        "Hynday" -> hyndai.dadosAutomovel()
+                        "Hyndai" -> hyndai.dadosAutomovel()
                     }
                 }
-                3 -> when (marca) {
+                2 -> when (marca) {
                     "Renault" -> {
                         renault.mostrarInformacoesAutomoveis()
                         renault.partidaMotor()
@@ -50,7 +52,7 @@ class MenuICarros : ICarros() {
                         fiat.acelerar()
                         fiat.freiar()
                     }
-                    "Hynday" ->{
+                    "Hyndai" -> {
                         hyndai.mostrarInformacoesAutomoveis()
                         hyndai.partidaMotor()
                         hyndai.acelerar()
@@ -58,7 +60,7 @@ class MenuICarros : ICarros() {
                     }
 
                 }
-                4 -> {
+                3 -> {
                     println("Obrigada por utilizar nosso sistema!! :D")
                     exitProcess(0)
                 }

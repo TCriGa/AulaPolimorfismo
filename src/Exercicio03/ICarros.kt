@@ -14,8 +14,13 @@ open class ICarros(
     open fun acelerar() = println()
 
     fun marcaAutomovel() {
-        println(" 01 - Informe a marca do automóvel: ")
+        println(" 01 - Informe a marca do automóvel (Fiat, Hynday ou Renalt): ")
         marca = readln()
+
+        if(marca != "Fiat" && marca != "Hyndai" && marca != "Renault"){
+            println("Marca não reconhecida. Digite Novamente")
+            marcaAutomovel()
+        }
     }
 
     open fun dadosAutomovel() {
