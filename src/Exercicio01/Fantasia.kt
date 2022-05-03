@@ -1,6 +1,6 @@
 package Exercicio01
 
-class Fantasia : Biblioteca() {
+class Fantasia : Livros() {
 
     fun registrarLivroFantasia(){
         registrarLivro(1234)

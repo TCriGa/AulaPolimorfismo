@@ -1,6 +1,6 @@
 package Exercicio01
 
-open class Biblioteca() {
+open class Livros() {
     open fun registrarLivro(isbn: Int) {
         println("O livro foi registrado com o ISBN = $isbn")
     }

@@ -1,6 +1,6 @@
 package Exercicio01
 
-class Autoajuda: Biblioteca() {
+class Autoajuda: Livros() {
 
 
     fun registrarLivroAutoAjuda(){
