@@ -1,6 +1,6 @@
 package MiniDesafioEx04
 
-class ContaSalario : Banco() {
+class ContaSalario : Conta() {
 
 
     override fun informarValorSaque() {
@@ -17,10 +17,8 @@ class ContaSalario : Banco() {
         }else println("Saque realizado com sucesso")
     }
 
-    fun saqueCS() {
-
-        saldoTotal = saldoIncial - saque + deposito
-        println("O valor do seu saldo é = $saldoTotal")
+    override fun valorSaldo() {
+        super.valorSaldo()
     }
 
 

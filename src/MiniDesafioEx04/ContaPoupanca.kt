@@ -1,6 +1,6 @@
 package MiniDesafioEx04
 
-class ContaPoupanca : Banco() {
+class ContaPoupanca : Conta() {
 
     override fun informarValorSaque() {
         super.informarValorSaque()
@@ -8,11 +8,9 @@ class ContaPoupanca : Banco() {
 
     }
 
-    fun saqueCP() {
-        saldoTotal = saldoIncial - saque + deposito
-        println("O valor do seu saldo é = $saldoTotal")
+    override fun valorSaldo() {
+        super.valorSaldo()
     }
-
 
     override fun depositoCS() {
         super.depositoCS()

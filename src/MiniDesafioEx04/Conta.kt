@@ -1,7 +1,6 @@
 package MiniDesafioEx04
 
-open class Banco(
-    private var conta: String = "",
+open class Conta(
     var deposito: Double = 0.0,
     var saque: Double = 0.0,
     var saldoIncial: Double = 0.0,
@@ -21,21 +20,26 @@ open class Banco(
         deposito = readln().toDouble()
     }
 
-   open fun validacaoSaqueCS() {
+    open fun validacaoSaqueCS() {
         if (saque >= saldoTotal && saque >= deposito) {
             println("Saldo Insuficiente")
-        }else println("Saque realizado com sucesso")
+        } else println("Saque realizado com sucesso")
     }
 
     open fun depositoCS() {
         println("Por gentileza, informe quem está realizando o deposito")
         pessoa = readln()
 
-        if (pessoa =="Empregador") {
+        if (pessoa == "Empregador") {
             informarValorDeposito()
         } else println("Conta Salário só pode receber depósito do empregador")
 
 
+    }
+
+   open fun valorSaldo() {
+        saldoTotal = saldoIncial - saque + deposito
+        println("O valor do seu saldo é = $saldoTotal")
     }
 
 

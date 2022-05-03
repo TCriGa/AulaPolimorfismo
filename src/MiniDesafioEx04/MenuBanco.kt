@@ -11,7 +11,7 @@ class MenuBanco {
 
     init {
 
-        println("|----------------* Bem vindo ao sistem Bancário TCriGA ------------------|")
+        println("|----------------* Bem vindo ao sistema Bancário TCriGA ------------------|")
     }
 
     fun opcaoMenuBancoCC() {
@@ -28,7 +28,7 @@ class MenuBanco {
                 1-> contaCorrente.informarValorSaque()
                 2 -> contaCorrente.depositoCS()
                 3-> {
-                    contaCorrente.saqueCC()
+                    contaCorrente.valorSaldo()
                 }
                 4 -> {
                     println("Obrigada por utilizar nosso sistema!! :D")
@@ -54,7 +54,7 @@ class MenuBanco {
                 1-> contaSalario.informarValorSaque()
                 2 -> contaSalario.depositoCS()
                 3-> {
-                    contaSalario.saqueCS()
+                    contaSalario.valorSaldo()
                 }
                 4 -> {
                     println("Obrigada por utilizar nosso sistema!! :D")
@@ -79,7 +79,7 @@ class MenuBanco {
                 1-> contaPoupanca.informarValorSaque()
                 2 -> contaPoupanca.depositoCS()
                 3-> {
-                    contaPoupanca.saqueCP()
+                    contaPoupanca.valorSaldo()
                 }
                 4 -> {
                     println("Obrigada por utilizar nosso sistema!! :D")
@@ -92,17 +92,22 @@ class MenuBanco {
 
     private fun informarQualConta() {
 
-        println("Informe qual tipo de conta deseja Abrir")
+        println("Informe qual tipo de conta deseja Abrir (Corrente, Salário ou Poupança)")
         tipoConta = readln()
+
+        if (tipoConta != "Corrente" && tipoConta != "Salário" && tipoConta != "Poupança"){
+            println("Conta inválida.")
+            informarQualConta()
+        }
     }
 
     fun menuInicial() {
         informarQualConta()
         do {
             when (tipoConta) {
-                "Conta Corrente" -> opcaoMenuBancoCC()
-                "Conta Salario" -> opcaoMenuBancoCS()
-                "Conta Poupanca" -> opcaoMenuBancoCP()
+                "Corrente" -> opcaoMenuBancoCC()
+                "Salário" -> opcaoMenuBancoCS()
+                "Poupança" -> opcaoMenuBancoCP()
 
 
             }

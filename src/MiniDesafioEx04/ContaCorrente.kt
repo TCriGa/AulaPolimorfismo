@@ -1,6 +1,6 @@
 package MiniDesafioEx04
 
-class ContaCorrente : Banco(){
+class ContaCorrente : Conta(){
 
     override fun informarValorSaque() {
         super.informarValorSaque()
@@ -8,9 +8,8 @@ class ContaCorrente : Banco(){
 
     }
 
-    fun saqueCC() {
-        saldoTotal = saldoIncial - saque + deposito
-        println("O valor do seu saldo é = $saldoTotal")
+    override fun valorSaldo() {
+        super.valorSaldo()
     }
 
 
